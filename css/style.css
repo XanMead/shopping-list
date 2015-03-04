@@ -1,5 +1,5 @@
 /*
-Color scheme via Palleton
+Color schemes via Palleton
 
 Gurren Blue: http://paletton.com/#uid=13z0u0kmYN7c7VOi5RtrJIeCECh	
 color-primary-0 { color: #4894D8 } Main Primary color 
@@ -23,3 +23,24 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
+
+.intro {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.logo {
+	background-color: #0A67BA;
+	background-image: url(../images/gurren-logo-small.png);
+	width: 190px;
+	height: 190px;
+	border: 2px solid white;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.logo, .intro h1 {
+	float: left;
+	margin: 1em auto;
+}
+
