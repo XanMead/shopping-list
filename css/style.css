@@ -1,0 +1,22 @@
+/*
+Color scheme via Palleton
+
+Gurren Blue: http://paletton.com/#uid=13z0u0kmYN7c7VOi5RtrJIeCECh	
+color-primary-0 { color: #4894D8 } Main Primary color 
+color-primary-1 { color: #9CC8F0 }
+color-primary-2 { color: #6CACE4 }
+color-primary-3 { color: #277DCA }
+color-primary-4 { color: #0A67BA }
+
+Gurren Red: http://paletton.com/#uid=1000u0kqCrBgo-alktAsXm7xNhg
+color-primary-0 { color: #DC2525 } Main Primary color 
+color-primary-1 { color: #FF7D7D }
+color-primary-2 { color: #EC4F4F }
+color-primary-3 { color: #B01111 }
+color-primary-4 { color: #890000 }
+
+*/
+
+body {
+	color: #eee;
+}
