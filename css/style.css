@@ -19,4 +19,7 @@ color-primary-4 { color: #890000 }
 
 body {
 	color: #eee;
+	background-image: url(../images/gurren-bg.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
