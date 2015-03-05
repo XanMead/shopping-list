@@ -22,6 +22,7 @@ body {
 	background-image: url(../images/gurren-bg.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-size: cover;
 }
 
 .intro {
@@ -36,11 +37,20 @@ body {
 	height: 190px;
 	border: 2px solid white;
 	border-radius: 50%;
-	text-align: center;
 }
 
-.logo, .intro h1 {
+.logo, .banner h1 {
 	float: left;
 	margin: 1em auto;
+}
+
+.banner h1 {
+	padding: 3em, 2em;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 2em;
+}
+
+.intro h2 {
+	clear: both;
 }
 
