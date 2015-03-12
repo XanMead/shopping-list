@@ -44,6 +44,10 @@ body {
 	margin: 1em auto;
 }
 
+.banner {
+	text-align: center;
+}
+
 .banner h1 {
 	padding: 3em, 2em;
 	font-family: 'Permanent Marker', cursive;
