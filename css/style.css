@@ -43,22 +43,28 @@ body {
 	border-radius: 50%;
 }
 
-.logo, .banner h1 {
-	float: left;
-	margin: 1em auto;
-}
-
 .banner {
-	text-align: center;
+	width: 500px;
+	margin: 0 auto;
 }
 
 .banner h1 {
-	padding: 3em, 2em;
 	font-family: 'Permanent Marker', cursive;
-	font-size: 2em;
+	font-size: 1.9em;
+	width: 140px;
 }
 
-.intro h2 {
-	clear: both;
+.banner-inner {
+	width: 490px;
+	margin: 0 auto;
+}
+
+.banner-element {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.be-first {
+	text-align: right;
 }
 
