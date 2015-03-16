@@ -17,10 +17,6 @@ color-primary-4 { color: #890000 }
 
 */
 
-* {
-	border: 1px solid red;
-}
-
 body {
 	color: #eee;
 	background-image: url(../images/gurren-bg.jpg);
@@ -32,6 +28,16 @@ body {
 .intro {
 	width: 600px;
 	margin: 0 auto;
+	font-family: Impact, Charcoal, sans-serif;
+	color: #EC4F4F;
+	text-align: center;
+	text-shadow: 2px 2px black;
+	font-weight: lighter;
+}
+
+.intro h2 {
+	font-size: 1.5em;
+	margin-bottom: 0.5em
 }
 
 .logo {
@@ -45,7 +51,8 @@ body {
 
 .banner {
 	width: 500px;
-	margin: 0 auto;
+	margin: 1em auto;
+	color: white;
 }
 
 .banner h1 {
