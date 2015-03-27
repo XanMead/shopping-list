@@ -126,8 +126,10 @@ body {
 	font-family: 'Permanent Marker', cursive;
 	color: white;
 	background-color: #222;
+	background-image: url(../images/grid.png);
 	width: 480px;
 	height: 2rem;
+	line-height: 2rem;
 }
 
 .item-box {
