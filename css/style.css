@@ -84,7 +84,7 @@ body {
 
 .add-box {
 	border-bottom: 2px dashed white;
-	width: 229px;
+	width: 460px;
 	margin: 0.25rem auto;
 }
 
@@ -153,4 +153,14 @@ body {
 	font-size: 1rem;
 	color: #999;
 	text-decoration: line-through;
+}
+
+.item-entry {
+	height: 20px;
+	width: 400px;
+	border: 2px dashed #555;
+	background-color: #222;
+	text-align: center;
+	color: white;
+	font-family: 'Courier New', sans-serif;
 }
