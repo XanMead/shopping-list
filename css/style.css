@@ -166,3 +166,28 @@ body {
 	color: white;
 	font-family: 'Courier New', sans-serif;
 }
+
+.drill {
+	height: 150px;
+	width: 150px;
+	margin: 0 auto;
+	background-image: url(../images/core-drill.png);
+}
+
+.credits {
+	width: 50%;
+	margin: 0.25rem auto;
+	background-image: url(../images/metal-bg.jpg);
+	color: #ccc;
+	font-family: 'Courier New', sans-serif;
+	font-size: 0.75rem;
+	font-weight: 700;
+	border-radius: 16px;
+	border: 2px solid black;
+	text-align: center;
+}
+
+.credits a {
+	text-decoration: none;
+	color: white;
+}
