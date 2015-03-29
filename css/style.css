@@ -86,6 +86,7 @@ body {
 	border-bottom: 2px dashed white;
 	width: 460px;
 	margin: 0.25rem auto;
+	height: 3rem;
 }
 
 .button {
@@ -135,8 +136,9 @@ body {
 
 .item-box {
 	margin: 0.25rem auto;
-	display: inline-block;
+	display: block;
 	height: 3rem;
+	width: 588px;
 }
 
 .item-box:hover {
