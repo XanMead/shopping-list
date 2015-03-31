@@ -132,6 +132,7 @@ body {
 	height: 2rem;
 	line-height: 2rem;
 	font-family: 'Permanent Marker', cursive;
+	font-variant: small-caps;
 }
 
 .item-box {
@@ -169,6 +170,14 @@ body {
 	text-align: center;
 	color: white;
 	font-family: 'Courier New', sans-serif;
+}
+
+.item-entry:focus {
+	outline: 0;
+}
+
+.edit-box {
+	display: none;
 }
 
 .drill {
