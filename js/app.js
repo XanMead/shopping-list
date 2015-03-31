@@ -17,6 +17,12 @@ $(document).ready(function() {
 		}
 	});
 
+	// Initialize data listener
+	$('.logo').on('click', function(event) {
+		console.log('init...');
+		initData();
+	});
+
 	// Add button listener
 	$('.add-button').on('click', function(event) {
 		addItem();
@@ -24,13 +30,11 @@ $(document).ready(function() {
 
 	// Check button listener
 	$('.item-list').on('click', '.checkbox', function(event) {
-		console.log('!');
 		checkItem(event);
 	});
 
 	// Uncheck button listener
 	$('.item-list').on('click', '.check-o', function(event) {
-		console.log('!');
 		uncheckItem(event);
 	});
 	
@@ -46,7 +50,20 @@ $(document).ready(function() {
 	
 });
 
+function initData() {
+	resetList();
+	createEntry('Meat');
+	createEntry('Bread');
+	createEntry('Stainless Steel Hex Bolts 1&frac12;" - 30 x 6');
+	createEntry('Gritted Teeth');
+	createEntry('Manly Spirit');
+}
 
+function resetList() {
+	$('.item-list').children().remove();
+}
+
+/* Fetches input from the add-box */
 function addItem() {
 	console.log("adding item...");
 	var itemText = $('#add').val().trim();
@@ -55,18 +72,19 @@ function addItem() {
 		alert('Please enter text to add an item.')
 	}
 	else {
-		var entry = createEntry(itemText);
-		$('<li class="item-box"></div>').prependTo('.item-list').html(entry);
+		createEntry(itemText);
 	}
 	// Clear input
 	$('#add').val('');
 }
 
+/* Creates an entry on the list */
 function createEntry(itemText) {
+	console.log("Creating item '" + itemText + "'...");
 	var entry = handle + checkYes + checkNo;
 	entry += '<div class="item-display unchecked">' + itemText + '</div>';
 	entry += edit + delButton;
-	return entry;
+	$('<li class="item-box"></div>').appendTo('.item-list').html(entry);
 }
 
 function checkItem(event) {
