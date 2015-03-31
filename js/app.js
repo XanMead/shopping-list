@@ -23,22 +23,24 @@ $(document).ready(function() {
 	});
 
 	// Check button listener
-	$('.checkbox').on('click', function(event) {
+	$('.item-list').on('click', '.checkbox', function(event) {
+		console.log('!');
 		checkItem(event);
 	});
 
 	// Uncheck button listener
-	$('.check-o').on('click', function(event) {
+	$('.item-list').on('click', '.check-o', function(event) {
+		console.log('!');
 		uncheckItem(event);
 	});
 	
 	// Delete button listener
-	$('.delete').on('click', function(event) {
+	$('.item-list').on('click', '.delete', function(event) {
 		deleteItem(event);
 	});
 	
 	// Edit button listener
-	$('.edit').on('click', function(event) {
+	$('.item-list').on('click', '.edit', function(event) {
 		console.log("Edit function not yet implemented...");
 	});
 	
