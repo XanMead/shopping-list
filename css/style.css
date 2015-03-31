@@ -157,6 +157,10 @@ body {
 	text-decoration: line-through;
 }
 
+.check-o {
+	display: none;
+}
+
 .item-entry {
 	height: 20px;
 	width: 400px;
