@@ -89,6 +89,23 @@ body {
 	height: 3rem;
 }
 
+.info-panel {
+	display: none;
+	position: relative;
+	left: 30px;
+	top: 5px;
+	width: 400px;
+	padding: 5px;
+	border: 2px solid #0A67BA;
+	background-color: #890000;
+	font-family: 'Ubuntu Mono', sans-serif;
+	color: white;
+}
+
+.info-panel i {
+	color: #9CC8F0;
+}
+
 .button {
 	display: inline-block;
 	width: 20px;
@@ -169,7 +186,7 @@ body {
 	background-color: #222;
 	text-align: center;
 	color: white;
-	font-family: 'Courier New', sans-serif;
+	font-family: 'Ubuntu Mono', sans-serif;
 }
 
 .item-entry:focus {
@@ -192,9 +209,8 @@ body {
 	margin: 0.25rem auto;
 	background-image: url(../images/metal-bg.jpg);
 	color: #ccc;
-	font-family: 'Courier New', sans-serif;
+	font-family: 'Ubuntu Mono', sans-serif;
 	font-size: 0.75rem;
-	font-weight: 700;
 	border-radius: 16px;
 	border: 2px solid black;
 	text-align: center;

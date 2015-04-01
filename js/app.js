@@ -48,13 +48,21 @@ $(document).ready(function() {
 		console.log("Edit function not yet implemented...");
 	});
 	
+	// How-to rollover listeners
+	$('.how-to').mouseenter(function() {
+		$('.info-panel').show();
+	});
+
+	$('.how-to').mouseleave(function() {
+		$('.info-panel').hide();
+	});
 });
 
 function initData() {
 	resetList();
 	createEntry('Meat');
 	createEntry('Bread');
-	createEntry('Stainless Steel Hex Bolts 1&frac12;" - 30 x 6');
+	createEntry('Stainless Steel Hex Bolts 1&frac12;" - 30 x 6"');
 	createEntry('Gritted Teeth');
 	createEntry('Manly Spirit');
 }
