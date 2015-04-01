@@ -11,35 +11,25 @@ $(document).ready(function() {
 	$('.item-entry').keypress(function(event) {
 		if (event.keyCode == 13) {
 			event.preventDefault();
-			$(event.target).next().click();
+			// Terget the next adjacent button, i.e 'add' or 'edit'
+			$(event.target).next('.button').click();
 		}
 	});
 
 	// Initialize data listener
-	$('.logo').on('click', function(event) {
-		console.log('Adding init data');
-		initData();
-	});
+	$('.logo').on('click', function(event) { initData(); });
 
 	// Add button listener
-	$('.add-button').on('click', function(event) {
-		addItem();
-	});
+	$('.add-button').on('click', function(event) { addItem(); });
 
 	// Check button listener
-	$('.item-list').on('click', '.checkbox', function(event) {
-		checkItem(event);
-	});
+	$('.item-list').on('click', '.checkbox', function(event) { checkItem(event); });
 
 	// Uncheck button listener
-	$('.item-list').on('click', '.check-o', function(event) {
-		uncheckItem(event);
-	});
+	$('.item-list').on('click', '.check-o', function(event) { uncheckItem(event); });
 	
 	// Delete button listener
-	$('.item-list').on('click', '.delete', function(event) {
-		deleteItem(event);
-	});
+	$('.item-list').on('click', '.delete', function(event) { deleteItem(event); });
 	
 	// Edit button listener
 	$('.item-list').on('click', '.edit', function(event) {
@@ -102,5 +92,5 @@ function uncheckItem(event) {
 }
 
 function deleteItem(event) {
-	console.log("Delete function not yet implemented...");
+	$(event.target).parents('.item-box').remove();
 }
