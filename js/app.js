@@ -1,9 +1,9 @@
-var handle = '<div class="handle"><i class="fa fa-bars"></i></div>';
-var checkYes = '<div class="button checkbox"><i class="fa fa-check"></i></div>';
-var checkNo = '<div class="button check-o"><i class="fa fa-circle-o"></i></div>';
-var editBox = '<input class="item-entry edit-box" id="edit" type="text">';
-var edit = '<div class="button edit"><i class="fa fa-pencil"></i></div>';
-var delButton = '<div class="button delete"><i class="fa fa-remove"></i></div>';
+var handle = '<div id="handle"><i class="fa fa-bars"></i></div>';
+var checkYes = '<div class="button" id="checkbox" id=><i class="fa fa-check"></i></div>';
+var checkNo = '<div class="button" id="check-o"><i class="fa fa-circle-o"></i></div>';
+var editBox = '<input class="item-entry" id="edit-box" type="text">';
+var edit = '<div class="button id="edit"><i class="fa fa-pencil"></i></div>';
+var delButton = '<div class="button" id="delete"><i class="fa fa-remove"></i></div>';
 
 $(document).ready(function() {
 
@@ -23,16 +23,16 @@ $(document).ready(function() {
 	$('.add-button').on('click', function(event) { addItem(); });
 
 	// Check button listener
-	$('.item-list').on('click', '.checkbox', function(event) { checkItem(event); });
+	$('.item-list').on('click', '#checkbox', function(event) { checkItem(event); });
 
 	// Uncheck button listener
-	$('.item-list').on('click', '.check-o', function(event) { uncheckItem(event); });
+	$('.item-list').on('click', '#check-o', function(event) { uncheckItem(event); });
 	
 	// Delete button listener
-	$('.item-list').on('click', '.delete', function(event) { deleteItem(event); });
+	$('.item-list').on('click', '#delete', function(event) { deleteItem(event); });
 	
 	// Edit button listener
-	$('.item-list').on('click', '.edit', function(event) {
+	$('.item-list').on('click', '#edit', function(event) {
 		console.log("Edit function not yet implemented...");
 	});
 	
@@ -99,6 +99,7 @@ function deleteItem(event) {
  * otherwise, returns DOM object of parent button.
  */
 function getButton(event) {
+	// Check if 'button' exists in the className
 	if (event.target.className.indexOf('button') == -1) {
 		return $(event.target).parents('.button');
 	}
