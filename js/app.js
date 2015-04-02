@@ -16,7 +16,7 @@ $(document).ready(function() {
 		}
 	});
 
-	// Initialize data listener
+	// Data initialization listener
 	$('.logo').on('click', function(event) { initData(); });
 
 	// Add button listener
@@ -78,13 +78,13 @@ function addItem() {
 function createEntry(itemText) {
 	console.log("Creating item '" + itemText + "'...");
 	var entry = handle + checkYes + checkNo;
-	entry += '<div class="item-display unchecked">' + itemText + '</div>';
+	entry += '<div class="item-display" id="unchecked">' + itemText + '</div>';
 	entry += edit + delButton;
 	$('<li class="item-box"></div>').appendTo('.item-list').html(entry);
 }
 
 function checkItem(event) {
-	console.log("Check function not yet implemented...");
+	var checkButton = getButton(event);
 }
 
 function uncheckItem(event) {
@@ -93,4 +93,14 @@ function uncheckItem(event) {
 
 function deleteItem(event) {
 	$(event.target).parents('.item-box').remove();
+}
+
+/* returns DOM object of parent button if event.target is not the button
+ * otherwise, returns DOM object of parent button.
+ */
+function getButton(event) {
+	if (event.target.className.indexOf('button') == -1) {
+		return $(event.target).parents('.button');
+	}
+	return $(event.target);
 }
