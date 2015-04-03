@@ -135,7 +135,7 @@ body {
 	/*vertical-align: middle;*/
 }
 
-.handle:hover {
+#handle:hover {
 	cursor: move;
 }
 

@@ -2,11 +2,7 @@ var handle = '<div id="handle"><i class="fa fa-bars"></i></div>';
 var checkYes = '<div class="button" id="checkbox" id=><i class="fa fa-check"></i></div>';
 var checkNo = '<div class="button" id="check-o"><i class="fa fa-circle-o"></i></div>';
 var editBox = '<input class="item-entry" id="edit-box" type="text">';
-<<<<<<< HEAD
 var edit = '<div class="button" id="edit"><i class="fa fa-pencil"></i></div>';
-=======
-var edit = '<div class="button id="edit"><i class="fa fa-pencil"></i></div>';
->>>>>>> b0efc4cae56fddce9ef030693b5a1174122ba73b
 var delButton = '<div class="button" id="delete"><i class="fa fa-remove"></i></div>';
 
 $(document).ready(function() {
@@ -27,14 +23,11 @@ $(document).ready(function() {
 	$('.add-button').on('click', function(event) { addItem(); });
 
 	// Check button listener
-<<<<<<< HEAD
 	$('.item-list').on('click', '#checkbox', function(event) {
 		console.log(event.target);
 		checkItem(event);
 	});
-=======
 	$('.item-list').on('click', '#checkbox', function(event) { checkItem(event); });
->>>>>>> b0efc4cae56fddce9ef030693b5a1174122ba73b
 
 	// Uncheck button listener
 	$('.item-list').on('click', '#check-o', function(event) { uncheckItem(event); });
@@ -104,18 +97,4 @@ function uncheckItem(event) {
 
 function deleteItem(event) {
 	$(event.target).parents('.item-box').remove();
-<<<<<<< HEAD
-=======
-}
-
-/* returns DOM object of parent button if event.target is not the button
- * otherwise, returns DOM object of parent button.
- */
-function getButton(event) {
-	// Check if 'button' exists in the className
-	if (event.target.className.indexOf('button') == -1) {
-		return $(event.target).parents('.button');
-	}
-	return $(event.target);
->>>>>>> b0efc4cae56fddce9ef030693b5a1174122ba73b
 }
