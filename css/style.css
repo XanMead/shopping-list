@@ -125,7 +125,7 @@ body {
 	color: #B01111;
 }
 
-.handle {
+#handle {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
@@ -176,7 +176,7 @@ body {
 	text-decoration: line-through;
 }
 
-.check-o {
+#check-o {
 	display: none;
 }
 

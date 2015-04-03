@@ -2,7 +2,7 @@ var handle = '<div id="handle"><i class="fa fa-bars"></i></div>';
 var checkYes = '<div class="button" id="checkbox" id=><i class="fa fa-check"></i></div>';
 var checkNo = '<div class="button" id="check-o"><i class="fa fa-circle-o"></i></div>';
 var editBox = '<input class="item-entry" id="edit-box" type="text">';
-var edit = '<div class="button id="edit"><i class="fa fa-pencil"></i></div>';
+var edit = '<div class="button" id="edit"><i class="fa fa-pencil"></i></div>';
 var delButton = '<div class="button" id="delete"><i class="fa fa-remove"></i></div>';
 
 $(document).ready(function() {
@@ -23,7 +23,10 @@ $(document).ready(function() {
 	$('.add-button').on('click', function(event) { addItem(); });
 
 	// Check button listener
-	$('.item-list').on('click', '#checkbox', function(event) { checkItem(event); });
+	$('.item-list').on('click', '#checkbox', function(event) {
+		console.log(event.target);
+		checkItem(event);
+	});
 
 	// Uncheck button listener
 	$('.item-list').on('click', '#check-o', function(event) { uncheckItem(event); });
@@ -84,7 +87,7 @@ function createEntry(itemText) {
 }
 
 function checkItem(event) {
-	var checkButton = getButton(event);
+	
 }
 
 function uncheckItem(event) {
