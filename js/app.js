@@ -68,12 +68,17 @@ function addItem() {
 	if (!itemText) {
 		// String is empty/pure whitespace
 		alert('Please enter text to add an item.')
+		// Clear input
+		$('#add').val('');
+	}
+	else if (itemText.length > 30) {
+		alert('Please limit your entry to 30 characters.')
 	}
 	else {
 		createEntry(itemText);
+		// Clear input
+		$('#add').val('');
 	}
-	// Clear input
-	$('#add').val('');
 }
 
 /* Creates an entry on the list */
