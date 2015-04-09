@@ -36,7 +36,7 @@ $(document).ready(function() {
 	
 	// Edit button listener
 	$('.item-list').on('click', '.edit', function(event) {
-		console.log("Edit function not yet implemented...");
+		editItem(event);
 	});
 
 	// Catch editing blur to hide edit-box.
@@ -97,7 +97,7 @@ function createEntry(itemText) {
 	console.log("Creating item '" + itemText + "'...");
 	var entry = handle + checkYes;
 	entry += '<div class="item-display unchecked">' + itemText + '</div>';
-	entry += edit + delButton;
+	entry += editBox + edit + delButton;
 	$('<li class="item-box"></div>').appendTo('.item-list').html(entry);
 }
 
@@ -115,7 +115,16 @@ function deleteItem(event) {
 	$(event.target).parents('.item-box').remove();
 }
 
-function defocusEdit(itemBox) {
-	itemBox = $(itemBox);
+function editItem(event) {
+	var itemBox = $(event.target).parents('.item-box');
+	var itemDisplay = itemBox.children('.item-display');
+	var editBox = itemBox.children('.edit-box');
 
+	// Populate input with current text
+	editBox.val(itemDisplay.text());
+
+	// Swap display for entry
+	itemDisplay.hide();
+	editBox.show();
+	editBox.focus();
 }

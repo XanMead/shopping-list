@@ -122,7 +122,6 @@ body {
 .button-toggled {
 	background-color: #890000;
 	color: #277DCA;
-	border-color: #999;
 }
 
 .button:hover {
@@ -207,6 +206,7 @@ body {
 
 .edit-box {
 	display: none;
+	width: 476px;
 }
 
 .drill {
