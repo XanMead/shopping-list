@@ -1,3 +1,4 @@
+/* Item Display Components */
 var handle = '<div class="handle"><i class="fa fa-bars"></i></div>';
 var checkYes = '<div class="button checkbox"><i class="fa fa-check"></i></div>';
 var editBox = '<input class="item-entry edit-box" type="text">';
@@ -10,8 +11,11 @@ $(document).ready(function() {
 	$('.item-entry').keypress(function(event) {
 		if (event.keyCode == 13) {
 			event.preventDefault();
-			// Terget the next adjacent button, i.e 'add' or 'edit'
+			// Target the next adjacent button, i.e 'add' or 'edit'
 			$(event.target).next('.button').click();
+			if (event.target.id != 'add') {
+				$(event.target).blur();
+			}
 		}
 	});
 
@@ -22,10 +26,7 @@ $(document).ready(function() {
 	$('.add-button').on('click', function(event) { addItem(); });
 
 	// Check button listener
-	$('.item-list').on('click', '.checkbox', function(event) {
-		console.log(event.target);
-		toggleItem(event);
-	});
+	$('.item-list').on('click', '.checkbox', function(event) { toggleItem(event); });
 
 	// Uncheck button listener
 	$('.item-list').on('click', '.check-o', function(event) { uncheckItem(event); });
@@ -36,6 +37,16 @@ $(document).ready(function() {
 	// Edit button listener
 	$('.item-list').on('click', '.edit', function(event) {
 		console.log("Edit function not yet implemented...");
+	});
+
+	// Catch editing blur to hide edit-box.
+	$('.item-list').on('blur', '.edit-box', function(event) {
+		var itemBox = $(event.target).parents('.item-box');
+		// Swap edit-box and item display
+		$(event.target).hide();
+		itemBox.children('.item-display').show();
+		// Detoggle edit button
+		itemBox.children('.edit').toggleClass('button-toggled');
 	});
 	
 	// How-to rollover listeners
@@ -91,15 +102,20 @@ function createEntry(itemText) {
 }
 
 function toggleItem(event) {
-	var parentBox = $(event.target).parents('.item-box');
+	var itemBox = $(event.target).parents('.item-box');
 	// Toggle .unchecked [off -> on] or [on -> off]
-	parentBox.children('.item-display').toggleClass('unchecked');
+	itemBox.children('.item-display').toggleClass('unchecked');
 	// Toggle .checked on [on -> off] or [off -> on]
-	parentBox.children('.item-display').toggleClass('checked');
+	itemBox.children('.item-display').toggleClass('checked');
 	// Toggle check-button style
-	parentBox.children('.checkbox').toggleClass('button-toggled');
+	itemBox.children('.checkbox').toggleClass('button-toggled');
 }
 
 function deleteItem(event) {
 	$(event.target).parents('.item-box').remove();
+}
+
+function defocusEdit(itemBox) {
+	itemBox = $(itemBox);
+
 }
