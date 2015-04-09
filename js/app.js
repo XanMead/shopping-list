@@ -1,6 +1,5 @@
 var handle = '<div class="handle"><i class="fa fa-bars"></i></div>';
-var checkYes = '<div class="button checkbox" id=><i class="fa fa-check"></i></div>';
-var checkNo = '<div class="button check-o"><i class="fa fa-circle-o"></i></div>';
+var checkYes = '<div class="button checkbox"><i class="fa fa-check"></i></div>';
 var editBox = '<input class="item-entry edit-box" type="text">';
 var edit = '<div class="button edit"><i class="fa fa-pencil"></i></div>';
 var delButton = '<div class="button delete"><i class="fa fa-remove"></i></div>';
@@ -25,7 +24,7 @@ $(document).ready(function() {
 	// Check button listener
 	$('.item-list').on('click', '.checkbox', function(event) {
 		console.log(event.target);
-		checkItem(event);
+		toggleItem(event);
 	});
 
 	// Uncheck button listener
@@ -80,18 +79,20 @@ function addItem() {
 /* Creates an entry on the list */
 function createEntry(itemText) {
 	console.log("Creating item '" + itemText + "'...");
-	var entry = handle + checkYes + checkNo;
-	entry += '<div class="item-display" id="unchecked">' + itemText + '</div>';
+	var entry = handle + checkYes;
+	entry += '<div class="item-display unchecked">' + itemText + '</div>';
 	entry += edit + delButton;
 	$('<li class="item-box"></div>').appendTo('.item-list').html(entry);
 }
 
-function checkItem(event) {
-	
-}
-
-function uncheckItem(event) {
-	console.log("Uncheck function not yet implemented...");
+function toggleItem(event) {
+	var parentBox = $(event.target).parents('.item-box');
+	// Toggle .unchecked [off -> on] or [on -> off]
+	parentBox.children('.item-display').toggleClass('unchecked');
+	// Toggle .checked on [on -> off] or [off -> on]
+	parentBox.children('.item-display').toggleClass('checked');
+	// Toggle check-button style
+	parentBox.children('.checkbox').toggleClass('button-toggled');
 }
 
 function deleteItem(event) {
