@@ -5,6 +5,8 @@ var editBox = '<input class="item-entry edit-box" type="text">';
 var edit = '<div class="button edit"><i class="fa fa-pencil"></i></div>';
 var delButton = '<div class="button delete"><i class="fa fa-remove"></i></div>';
 
+var editing = false;
+
 $(document).ready(function() {
 
 	// Allow enter to trigger add button click event
@@ -14,6 +16,7 @@ $(document).ready(function() {
 			// Target the next adjacent button, i.e 'add' or 'edit'
 			$(event.target).next('.button').click();
 			if (event.target.id != 'add') {
+				console.log(event.target);
 				$(event.target).blur();
 			}
 		}
@@ -33,20 +36,23 @@ $(document).ready(function() {
 	
 	// Delete button listener
 	$('.item-list').on('click', '.delete', function(event) { deleteItem(event); });
-	
-	// Edit button listener
-	$('.item-list').on('click', '.edit', function(event) {
-		editItem(event);
-	});
 
 	// Catch editing blur to hide edit-box.
 	$('.item-list').on('blur', '.edit-box', function(event) {
-		var itemBox = $(event.target).parents('.item-box');
-		// Swap edit-box and item display
-		$(event.target).hide();
-		itemBox.children('.item-display').show();
-		// Detoggle edit button
-		itemBox.children('.edit').toggleClass('button-toggled');
+		console.log('blur');
+		blurEditBox(event);
+	});
+	
+	// Edit button listener
+	$('.item-list').on('click', '.edit', function(event) {
+		if (!editing) {
+			console.log('editing')
+			editItem(event);
+		}
+		else {
+			console.log('committing')
+			commitEdit(event);
+		}
 	});
 	
 	// How-to rollover listeners
@@ -116,9 +122,13 @@ function deleteItem(event) {
 }
 
 function editItem(event) {
+	editing = true;
+
 	var itemBox = $(event.target).parents('.item-box');
 	var itemDisplay = itemBox.children('.item-display');
 	var editBox = itemBox.children('.edit-box');
+
+	itemBox.children('.edit').toggleClass('button-toggled');
 
 	// Populate input with current text
 	editBox.val(itemDisplay.text());
@@ -127,4 +137,23 @@ function editItem(event) {
 	itemDisplay.hide();
 	editBox.show();
 	editBox.focus();
+}
+
+function commitEdit(event) {
+	var itemBox = $(event.target).parents('.item-box');
+	var itemDisplay = itemBox.children('.item-display');
+	var editBox = itemBox.children('.edit-box');
+
+	itemDisplay.text(editBox.val());
+	editing = false;
+}
+
+function blurEditBox(event) {
+	var itemBox = $(event.target).parents('.item-box');
+	// Swap edit-box and item display
+	$(event.target).hide();
+	itemBox.children('.item-display').show();
+	// Detoggle edit button
+	itemBox.children('.edit').toggleClass('button-toggled');
+	editing = false;
 }
