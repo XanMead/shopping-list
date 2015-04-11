@@ -119,10 +119,20 @@ body {
 	line-height: 20px
 }
 
+.button-toggled {
+	background-color: #890000;
+	color: #277DCA;
+}
+
 .button:hover {
 	cursor: pointer;
 	background-color: #6CACE4;
 	color: #B01111;
+}
+
+.button > .fa {
+	width: 100%;
+	height: 100%;
 }
 
 .handle {
@@ -196,6 +206,7 @@ body {
 
 .edit-box {
 	display: none;
+	width: 476px;
 }
 
 .drill {
