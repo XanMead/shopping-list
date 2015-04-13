@@ -15,10 +15,6 @@ $(document).ready(function() {
 			event.preventDefault();
 			// Target the next adjacent button, i.e 'add' or 'edit'
 			$(event.target).next('.button').click();
-			if (event.target.id != 'add') {
-				console.log(event.target);
-				$(event.target).blur();
-			}
 		}
 	});
 
@@ -39,18 +35,15 @@ $(document).ready(function() {
 
 	// Catch editing blur to hide edit-box.
 	$('.item-list').on('blur', '.edit-box', function(event) {
-		console.log('blur');
-		blurEditBox(event);
+		setTimeout(function() {blurEditBox(event);}, 100);
 	});
 	
 	// Edit button listener
 	$('.item-list').on('click', '.edit', function(event) {
 		if (!editing) {
-			console.log('editing')
 			editItem(event);
 		}
 		else {
-			console.log('committing')
 			commitEdit(event);
 		}
 	});
@@ -80,7 +73,6 @@ function resetList() {
 
 /* Fetches input from the add-box */
 function addItem() {
-	console.log("adding item...");
 	var itemText = $('#add').val().trim();
 	if (!itemText) {
 		// String is empty/pure whitespace
